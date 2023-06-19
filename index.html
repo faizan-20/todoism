@@ -15,13 +15,41 @@
         </div>
         <div id="main">
             <div id="sidebar">
-                <div id="projects">
-                    <div id="head">Projects</div>
-                    <div id="home">Home</div>
-                </div>
+                <div id="head">My Projects</div>
+                <div class="home" id="project">Home</div>
             </div>
             <div id="right">
-                <div id="content">TodoList</div>
+                <div id="rightHeading">TodoList</div>
+                <div id="taskArea">
+                    <div id="addTask">
+                        <button id="addTaskBtn">Add Task</button>
+                    </div>
+                    <div id="add-form">
+                        <form action="#">
+                            <div id="name-desc">
+                                <input type="text" id="task-name" autocomplete="off" placeholder="Task Name" required>
+                            </div>
+                            <div id="date-priority">
+                                <label for="date">Due:</label>
+                                <input type="date" id="due-date" required>
+                                <label for="priority">Priority:</label>
+                                <select id="priority" required>
+                                    <option value="high">High</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                                <input id="submit" type="submit">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div id="task-display">
+                    <table id="display-tasks">
+
+                    </table>
+                </div>
             </div>
         </div>
     </div> 
