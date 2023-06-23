@@ -3,35 +3,36 @@ import { todoList } from "./todo";
 
 const displayTasks = () => {
     const table = document.querySelector('#display-tasks');
+    const rightHead = document.querySelector('#rightHeading');
     table.textContent = '';
-    
-    for(let i = 0; i < todoList.length; i++){
+
+    const taskDisplay = (i) => {
         const checkbox = document.createElement('input');
         checkbox.setAttribute('type', 'checkbox');
         checkbox.classList.add('check');
         checkbox.setAttribute('data-index', i);
-
+    
         let trow = document.createElement('tr');
         trow.classList.add(`trow${i}`, 'trow');
         trow.setAttribute('data-index', i);
         trow.id = 'row';
         table.appendChild(trow);
-
+    
         let sno = document.createElement('td');
         sno.classList.add('sno');
         trow.appendChild(sno);
         sno.appendChild(checkbox);
-
+    
         let task = document.createElement('td');
         task.classList.add('task-name');
         trow.appendChild(task);
         task.textContent = todoList[i].title;
-
+    
         let dueDate = document.createElement('td');
         dueDate.classList.add('due-date');
         trow.appendChild(dueDate);
         dueDate.textContent = todoList[i].dueDate;
-
+    
         let priority = document.createElement('td');
         priority.classList.add('priority');
         trow.appendChild(priority);
@@ -41,7 +42,16 @@ const displayTasks = () => {
         deleteTask.classList.add(`delete-task${i}`, 'delete-task');
         trow.appendChild(deleteTask);
         deleteTask.textContent = 'X';
-        deleteTask.setAttribute('data-index', i);
+        deleteTask.setAttribute('data-index', i);        
+    }
+    
+    for(let i = 0; i < todoList.length; i++){
+        if (rightHead.textContent === 'Home') {
+            taskDisplay(i);
+        }
+        else if(rightHead.textContent === todoList[i].project && rightHead.textContent !== 'Home'){
+            taskDisplay(i);
+        }
     }
 
     const check = document.querySelectorAll('.check');
@@ -84,7 +94,7 @@ const displayTasks = () => {
             }
             displayTasks();
         });
-    })
+    });
 }
 
 export default displayTasks;

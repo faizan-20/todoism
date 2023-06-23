@@ -1,10 +1,11 @@
-import RightHead from "./Main";
+import RightHead, { ProjectSelect } from "./Main";
 import displayTasks, { displayProjects } from "./UI";
 import { addProject } from "./projects";
-import { addTask, todoList } from "./todo";
+import { addTask } from "./todo";
 
 addTask();
 addProject();
+RightHead();
 displayTasks();
 displayProjects();
-RightHead();
+ProjectSelect();

@@ -1,5 +1,5 @@
-import RightHead from "./Main";
-import {displayProjects} from "./UI";
+import RightHead, { ProjectSelect } from "./Main";
+import displayTasks, {displayProjects} from "./UI";
 
 export default class Project{
     constructor(name){
@@ -34,8 +34,10 @@ export const addProject = () => {
             allProjects.push(new Project(addProjectField.value));
             addProjectField.value = '';
             newProjectForm.style.visibility = 'hidden';
+            displayTasks();
             displayProjects();
             RightHead();
+            ProjectSelect();
         }
     });
 

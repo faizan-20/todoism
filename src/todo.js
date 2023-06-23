@@ -14,7 +14,7 @@ export let todoList = [
         title: "Laundry",
         dueDate: "12-09-2022",
         priority: "high",
-        project: "home"
+        project: "Home"
     }
 ]
 
@@ -24,6 +24,7 @@ export const addTask = () => {
     const taskName = document.querySelector('#task-name');
     const dueDate = document.querySelector('#due-date');
     const priority = document.querySelector('#priority');
+    const project = document.querySelector('#select-project');
     const addTaskBtn = document.querySelector('#addTaskBtn');
     const addForm = document.querySelector('#add-form');
     
@@ -45,7 +46,7 @@ export const addTask = () => {
             console.log('ok');
         }else {
             e.preventDefault();
-            todoList.push(new Todo(taskName.value, dueDate.value, priority.value, "default"));
+            todoList.push(new Todo(taskName.value, dueDate.value, priority.value, project.value));
             clearAll();
             displayTasks();
         }
