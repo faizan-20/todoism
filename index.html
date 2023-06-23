@@ -15,28 +15,40 @@
         </div>
         <div id="main">
             <div id="sidebar">
-                <div id="head">My Projects</div>
-                <div class="home" id="project">Home</div>
+                <div id="projects-display">
+                    <div id="head">My Projects</div>
+                </div>
+                <div id="add-project">
+                    <button id="new-project">New Project</button>
+                    <div id="new-project-form">
+                        <input id="add-project-field" type="text" placeholder="Project Name" required>
+                        <input type="submit" id="submit-project">
+                    </div>
+                </div>
             </div>
             <div id="right">
-                <div id="rightHeading">TodoList</div>
+                <div id="rightHeading"></div>
                 <div id="taskArea">
                     <div id="addTask">
                         <button id="addTaskBtn">Add Task</button>
                     </div>
-                    <div id="add-form">
+                    <div id="add-form" style="visibility: hidden;">
                         <form action="#">
                             <div id="name-desc">
                                 <input type="text" id="task-name" autocomplete="off" placeholder="Task Name" required>
-                            </div>
-                            <div id="date-priority">
                                 <label for="date">Due:</label>
                                 <input type="date" id="due-date" required>
+                            </div>
+                            <div id="date-priority">
                                 <label for="priority">Priority:</label>
                                 <select id="priority" required>
                                     <option value="high">High</option>
                                     <option value="medium" selected>Medium</option>
                                     <option value="low">Low</option>
+                                </select>
+                                <label for="select-project">Project:</label>
+                                <select id="select-project" required>
+
                                 </select>
                                 <input id="submit" type="submit">
                             </div>

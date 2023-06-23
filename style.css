@@ -11,13 +11,15 @@
     align-items: center;
     height: 100dvh;
     width: 100dvw;
+    background-color: #2B2D42;
 }
 
 #topbar{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     padding: 10px;
     align-self: flex-start;
+    color: #EDF2F4;
 }
 
 #main {
@@ -29,7 +31,9 @@
 #sidebar {
     width: 20dvw;
     font-size: 1.2rem;
-    border: 1px solid red;
+    background-color: #8D99AE;
+    color: #2B2D42;
+    font-size: 1.5rem;
 }
 
 #project {
@@ -47,15 +51,17 @@
     font-size: 1.2rem;
     width: 100dvw;
     display: flex;
-    border: 1px solid blue;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #EDF2F4;
+    color: #2B2D42;
 }
 
 #rightHeading {
     font-size: 1.8rem;
     font-weight: 600;
+    margin-top: 50px;
 }
 
 #taskArea {
@@ -78,17 +84,86 @@
 
 .delete-task{
     font-weight: 1000;
-    color: red;
+    color: rgba(255, 0, 0, 0.545);
     cursor: pointer;
+    visibility: hidden;
 }
 
 .delete-task:hover{
-    background-color: rgba(175, 175, 175, 0.461);
+    color: red;
 }
 
 table, th, td {
     padding: 9px 20px;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-collapse: collapse;
+}
+
+.newProject:hover {
+    cursor: pointer;
+    background-color: #EDF2F4;
+}
+
+.newProject, #add-project {
+    padding: 2px 5px;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
+
+#projects-display{
+    margin-top: 10px;
+}
+
+button, #submit-project, #submit {
+    padding: 4px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#new-project{
+    background-color: #f1f6f778;
+    font-weight: 700;
+}
+
+#new-project:hover {
+    background-color: #EDF2F4;
+}
+
+#submit-project{
+    background-color: rgba(157, 255, 157, 0.527);
+}
+
+#submit-project:hover {
+    background-color: rgba(157, 255, 157, 0.871);
+}
+
+#addTaskBtn {
+    background-color: #8d99ae57;
+}
+
+#addTaskBtn:hover {
+    background-color: #8d99aea5;
+}
+
+#submit {
+    background-color: rgba(157, 255, 157, 0.527);
+}
+
+#submit:hover {
+    background-color: rgba(157, 255, 157, 0.871);
+}
+
+input {
+    border-radius: 3px;
+    border: none;
+    padding: 4px 12px;
+    margin: 5px;
+}
+
+#display-tasks > .trow {
+    border-radius: 100px;
 }
