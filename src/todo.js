@@ -14,7 +14,7 @@ export let todoList = [
         title: "Laundry",
         dueDate: "12-09-2022",
         priority: "high",
-        project: "default"
+        project: "home"
     }
 ]
 
@@ -24,12 +24,21 @@ export const addTask = () => {
     const taskName = document.querySelector('#task-name');
     const dueDate = document.querySelector('#due-date');
     const priority = document.querySelector('#priority');
+    const addTaskBtn = document.querySelector('#addTaskBtn');
+    const addForm = document.querySelector('#add-form');
     
     const clearAll = () => {
         taskName.value = null;
         dueDate.value = null;
         priority.value = 'medium';
     }
+
+    addTaskBtn.addEventListener('click', () => {
+        if(addForm.style.visibility === 'hidden')
+            addForm.style.visibility = 'visible';
+        else
+            addForm.style.visibility = 'hidden';
+    });  
 
     submitBtn.addEventListener('click', (e) => {
         if(taskName.value === '' || dueDate.value === ''){
@@ -40,5 +49,5 @@ export const addTask = () => {
             clearAll();
             displayTasks();
         }
-    })
+    });
 }
